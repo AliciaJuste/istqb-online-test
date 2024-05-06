@@ -2,12 +2,17 @@
 Javascript Project for ISQTB Online Test
 # ISTQB ONLINE TEST
 This is an ISTQB Online Exam Web Project.
-[ISTQB ONLINE TEST PROJECT](https://bootcamp-qa.github.io/javascript-istqb/)
+[ISTQB ONLINE TEST PROJECT](https://github.com/AliciaJuste/istqb-online-test)
 
 ## BUILD WITH
 * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 * ![BOOTSTRAP](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 * ![JAVASCRIPT](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+
+## BUILD WITH
+* ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" onclick="return false;")
+* ![BOOTSTRAP](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" onclick="return false;")
+* ![JAVASCRIPT](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" onclick="return false;"
 
 
 ## JIRA PROJECT
