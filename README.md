@@ -9,7 +9,7 @@ This is an ISTQB Online Exam Web Project.
 * ![BOOTSTRAP](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 * ![JAVASCRIPT](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-
+  
 ## JIRA PROJECT
 [JIRA SCRUM PROJECT](https://aliciajuste-bootcampqa.atlassian.net/jira/software/projects/IOT/boards/4)
 This project is using JIRA tool for project management and defect traking following agile methodology SCRUM.
