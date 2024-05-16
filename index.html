@@ -35,11 +35,105 @@
         <div id="welcome">
             <h2>Welcome</h2>
             <p>Welcome to ISTQB Online Test</p>
+            <input type="text" id="studentName" placeholder="Nombre usuario" required maxlength="10" class="form-control" style="max-width: 150px;">
+            <p class="valid-feedback">El nombre de usuario es correcto</p>
+            <p class="invalid-feedback">El nombre de usuario debe tener como máximo 10 caracteres</p>
+            <br>
+            <button type="button" id="registerButton" class="btn btn-primary" onclick="welcomeMessage('userGreeting', 'studentName')">Send</button>
+            <p id="userGreeting"></p>
         </div>
+        <br><br>
         <div id="test">
             <h2>Test</h2>
             <p>Istqb Online Test Section</p>
+
+            <h4>PREGUNTA 1</h4>
+            <h6>¿Cuál de los siguientes enunciados describe un objetivo de prueba válido?</h6>
+            <form id="question1form">
+                <div>
+                    <input type="radio" name="question1" id="question1option1" value="question1option1">
+                    <label for="question1option1">a. Demostrar que no hay defectos no corregidos en el sistema sujeto a prueba.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question1" id="question1option1" value="question1option1">
+                    <label for="question1option1">b. Reducir el nivel de riesgo del objeto de prueba y generar confianza en el nivel de calidad.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question1" id="question1option1" value="question1option1">
+                    <label for="question1option1">c. Comprobar que no existen combinaciones de entradas no probadas.</label>
+                </div>
+                <br>
+                <button type="button" id="question1Button" class="btn btn-primary" onclick="seeAnswer('seeAnswer1','b')">See Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="seeAnswer1"></p>
+            </form>
+            
+            <br><br>
+
+            <h4>PREGUNTA 2</h4>
+            <h6>¿Cuál de las siguientes opciones es un ejemplo de actividades de prueba que contribuyen al éxito?</h6>
+            <form id="question2form">
+            <div>
+                <input type="radio" name="question2" id="question2option1" value="question2option1">
+                <label for="question2option1">a. La participación de probadores durante varias actividades del ciclo de vida de desarrollo del
+                    software (CVDS) ayudará a detectar defectos en los productos software.</label>
+            </div>
+            <div>
+                <input type="radio" name="question2" id="question2option2" value="question2option2">
+                <label for="question2option2">b. Los probadores intentan no molestar a los desarrolladores mientras codifican, para que éstos escriban un código de mejor calidad.</label>
+            </div>
+            <div>
+                <input type="radio" name="question2" id="question2option3" value="question2option3">
+                <label for="question2option3">c. Los probadores que colaboran con los usuarios finales ayudan a mejorar la calidad de los
+                    informes de defectos durante la integración de componentes y las pruebas de sistemas.</label>
+            </div>
+            <br>
+            <button type="button" id="question2Button" class="btn btn-primary" onclick="seeAnswer('seeAnswer2','a')">See Answer</button>
+            <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+            <p id="seeAnswer2"></p>
+            </form>
+
+<!--
+            <h4>PREGUNTA 1</h4>
+            <label for="question1">1. ¿Cuál de los siguientes enunciados describe un objetivo de prueba válido?</label>
+            <select id="question1" class="form-select" style="max-width: 800px;">
+                <option value="1">a. Demostrar que no hay defectos no corregidos en el sistema sujeto a prueba</option>
+                <option value="2">b. Reducir el nivel de riesgo del objeto de prueba y generar confianza en el nivel de calidad.</option>
+                <option value="3">c. Comprobar que no existen combinaciones de entradas no probadas.</option>
+            </select>
+            <br>
+            <button type="button" id="question1Button" class="btn btn-success" onclick="seeAnswer('seeAnswer1','b')">See Answer</button>
+            <p id="seeAnswer1"></p>
+            <br><br>
+-->
+<!--        <h4>PREGUNTA 3</h4>
+            <h6>¿Cuál de las siguientes opciones es un ejemplo de actividades de prueba que contribuyen al éxito?</h6>
+              <script>
+                function marcarUnicaOpcion(checkbox) {
+                  var checkboxes = document.getElementsByName(checkbox.name);
+                  checkboxes.forEach(function(cb) {
+                    if (cb !== checkbox) {
+                      cb.checked = false;
+                    }
+                  });
+                }
+              </script>
+              <form>
+                <h2>Pregunta 1: ¿Cuál es tu color favorito?</h2>
+                <input type="checkbox" name="color" value="rojo" onclick="marcarUnicaOpcion(this)"> Rojo<br>
+                <input type="checkbox" name="color" value="azul" onclick="marcarUnicaOpcion(this)"> Azul<br>
+                <input type="checkbox" name="color" value="verde" onclick="marcarUnicaOpcion(this)"> Verde<br>
+                <!-- El siguiente checkbox permitirá desmarcar todas las opciones
+                <input type="checkbox" onclick="marcarUnicaOpcion(this)"> Ninguno<br>
+              </form>
+
+            
+            <br>
+            <button type="button" id="question2Button" class="btn btn-success" onclick="seeAnswer('seeAnswer2','a')">See Answer</button>
+            <p id="seeAnswer2"></p>
         </div>
+    -->    
+        <br><br>
         <div id="ranking">
             <h2>Ranking</h2>
             <p>Student Ranking</p>
