@@ -32,7 +32,7 @@
 
     <div class="container mt-5">
 
-        <div id="welcome">
+        <form id="welcome" class="was-validated">
             <h2>Welcome</h2>
             <p>Welcome to ISTQB Online Test</p>
             <input type="text" id="studentName" placeholder="Nombre usuario" required maxlength="10" class="form-control" style="max-width: 150px;">
@@ -41,7 +41,7 @@
             <br>
             <button type="button" id="registerButton" class="btn btn-primary" onclick="welcomeMessage('userGreeting', 'studentName')">Send</button>
             <p id="userGreeting"></p>
-        </div>
+        </form>
         <br><br>
         <div id="test">
             <h2>Test</h2>
