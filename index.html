@@ -31,82 +31,361 @@
     </nav>
 
     <div class="container mt-5">
-
-        <form id="welcome" class="was-validated">
-            <h2>Welcome</h2>
-            <p>Welcome to ISTQB Online Test</p>
-            <input type="text" id="studentName" placeholder="Nombre usuario" required maxlength="10" class="form-control" style="max-width: 150px;">
-            <p class="valid-feedback">El nombre de usuario es correcto</p>
-            <p class="invalid-feedback">El nombre de usuario no puede estar vacio y debe tener como máximo 10 caracteres</p>
-            <br>
-            <button type="button" id="registerButton" class="btn btn-primary" onclick="welcomeMessage('userGreeting', 'studentName')">Send</button>
-            <p id="userGreeting"></p>
-        </form>
+        <div id="welcome">
+            <form id="welcomeForm" class="was-validated">
+                <h2>Welcome</h2>
+                <p>Welcome to ISTQB Online Test</p>
+                <input type="text" id="studentName" placeholder="Nombre usuario" required maxlength="10"
+                    class="form-control" style="max-width: 170px;">
+                <p class="valid-feedback">El nombre de usuario es correcto</p>
+                <p class="invalid-feedback">El nombre de usuario no puede estar vacio y debe tener como máximo 10
+                    caracteres
+                </p>
+                <br>
+                <button type="button" id="registerButton" class="btn btn-primary"
+                    onclick="studentRegister('studentName', 'userGreeting')">Send</button>
+                <p id="userGreeting"></p>
+            </form>
+        </div>
         <br><br>
         <div id="test">
             <h2>Test</h2>
             <p>Istqb Online Test Section</p>
-
+            <!-- QUESTION 1 ---------------------------------------------------------------------------------------->
             <h4>PREGUNTA 1</h4>
             <h6>¿Cuál de los siguientes enunciados describe un objetivo de prueba válido?</h6>
             <form id="question1form">
                 <div>
                     <input type="radio" name="question1" id="question1option1" value="a">
-                    <label for="question1option1">a. Demostrar que no hay defectos no corregidos en el sistema sujeto a prueba.</label>
+                    <label for="question1option1">a) Demostrar que no hay defectos no corregidos en el sistema sujeto a
+                        prueba.</label>
                 </div>
                 <div>
                     <input type="radio" name="question1" id="question1option2" value="b">
-                    <label for="question1option2">b. Reducir el nivel de riesgo del objeto de prueba y generar confianza en el nivel de calidad.</label>
+                    <label for="question1option2">b) Demostrar que no se producirán fallos tras la implementación del
+                        sistema en producción.</label>
                 </div>
                 <div>
                     <input type="radio" name="question1" id="question1option3" value="c">
-                    <label for="question1option3">c. Comprobar que no existen combinaciones de entradas no probadas.</label>
+                    <label for="question1option3">c) Reducir el nivel de riesgo del objeto de prueba y generar confianza
+                        en el nivel de calidad.</label>
                 </div>
                 <br>
-                <button type="button" id="question1SeeAnswerButton" class="btn btn-primary" onclick="seeAnswer(1)">See Answer</button>
-                <button type="button" id="question1CorrectAnswerButton" class="btn btn-primary" onclick="correctAnswer(1)">Correct Answer</button>
+                <button type="button" id="question1SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(1)">See
+                    Answer</button>
+                <button type="button" id="question1CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(1, 1)">Correct Answer</button>
                 <button type="reset" id="clear1Button" class="btn btn-close border" title="Clean answers"></button>
                 <p id="responseAnswer1"></p>
-                </form>
-            
+            </form>
             <br><br>
-
+            <!-- QUESTION 2 ---------------------------------------------------------------------------------------->
             <h4>PREGUNTA 2</h4>
             <h6>¿Cuál de las siguientes opciones es un ejemplo de actividades de prueba que contribuyen al éxito?</h6>
             <form id="question2form">
-            <div>
-                <input type="radio" name="question2" id="question2option1" value="a">
-                <label for="question2option1">a. La participación de probadores durante varias actividades del ciclo de vida de desarrollo del
-                    software (CVDS) ayudará a detectar defectos en los productos software.</label>
-            </div>
-            <div>
-                <input type="radio" name="question2" id="question2option2" value="b">
-                <label for="question2option2">b. Los probadores intentan no molestar a los desarrolladores mientras codifican, para que éstos escriban un código de mejor calidad.</label>
-            </div>
-            <div>
-                <input type="radio" name="question2" id="question2option3" value="c">
-                <label for="question2option3">c. Los probadores que colaboran con los usuarios finales ayudan a mejorar la calidad de los
-                    informes de defectos durante la integración de componentes y las pruebas de sistemas.</label>
-            </div>
-            <br>
-            <button type="button" id="question2SeeAnswerButton" class="btn btn-primary" onclick="seeAnswer(2)">See Answer</button>
-            <button type="button" id="question2CorrectAnswerButton" class="btn btn-primary" onclick="correctAnswer(2)">Correct Answer</button>
-            <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
-            <p id="responseAnswer2"></p>
+                <div>
+                    <input type="radio" name="question2" id="question2option1" value="a">
+                    <label for="question2option1">a) La participación de probadores durante varias actividades del ciclo
+                        de vida de desarrollo del
+                        software (CVDS) ayudará a detectar defectos en los productos software.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question2" id="question2option2" value="b">
+                    <label for="question2option2">b) Los probadores intentan no molestar a los desarrolladores mientras
+                        codifican, para que éstos escriban un código de mejor calidad.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question2" id="question2option3" value="c">
+                    <label for="question2option3">c) Los probadores que colaboran con los usuarios finales ayudan a
+                        mejorar la calidad de los
+                        informes de defectos durante la integración de componentes y las pruebas de sistemas.</label>
+                </div>
+                <br>
+                <button type="button" id="question2SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(2)">See
+                    Answer</button>
+                <button type="button" id="question2CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(2, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer2"></p>
             </form>
-        <br><br>
+            <br><br>
+            <!-- QUESTION 3 ---------------------------------------------------------------------------------------->
+            <h4>PREGUNTA 3</h4>
+            <h6>Usted ha sido asignado como probador a un equipo que está desarrollando un nuevo sistema de forma
+                incremental. Ha notificado que no se han realizado cambios en los casos de prueba de regresión
+                existentes durante varias iteraciones y que no se han identificado nuevos defectos de regresión. Su jefe
+                está contento, pero usted no. ¿Qué principio de prueba explica su escepticismo?</h6>
+            <form id="question3form">
+                <div>
+                    <input type="radio" name="question3" id="question3option1" value="a">
+                    <label for="question3option1">a) Laspruebas se desgastan.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question3" id="question3option2" value="b">
+                    <label for="question3option2">b) Falacia de la ausencia de errores.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question3" id="question3option3" value="c">
+                    <label for="question3option3">c) Los defectos se agrupan.</label>
+                </div>
+                <br>
+                <button type="button" id="question3SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(3)">See
+                    Answer</button>
+                <button type="button" id="question3CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(3, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer3"></p>
+            </form>
+            <br><br>
+            <!-- QUESTION 4 ---------------------------------------------------------------------------------------->
+            <h4>PREGUNTA 4</h4>
+            <h6>Usted trabaja en un equipo que desarrolla una aplicación móvil para hacer pedidos de comida. En la
+                iteración actual el equipo decidió implementar la funcionalidad de pago.
+                ¿Cuál de las siguientes actividades forma parte del análisis de prueba?</h6>
+            <form id="question4form">
+                <div>
+                    <input type="radio" name="question4" id="question4option1" value="a">
+                    <label for="question4option1">a) Estimar que probar la integración con el servicio de pago llevará 8
+                        días-persona.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question4" id="question4option2" value="b">
+                    <label for="question4option2">b) Decidir que el equipo debe probar si es posible compartir
+                        correctamente el pago entre muchos
+                        usuarios.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question4" id="question4option3" value="c">
+                    <label for="question4option3">c) Utilizar el análisis del valor frontera (AVF) para obtener los
+                        datos de prueba para los casos de prueba que comprueban el procesamiento correcto del pago para
+                        el
+                        importe minimo permitido a
+                        pagar.</label>
+                </div>
+                <br>
+                <button type="button" id="question4SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(4)">See
+                    Answer</button>
+                <button type="button" id="question4CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(4, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer4"></p>
+            </form>
+            <!-- QUESTION 5 ---------------------------------------------------------------------------------------->
+            <h4>PREGUNTA 5</h4>
+            <h6>¿Cuáles de los siguientes factores (del | al V) tienen una influencia SIGNIFICATIVA en el proceso de
+                prueba? El ciclo de vida de desarrollo de software (CVDS).
+                l. El número de defectos detectados en proyectos anteriores.
+                1. Los riesgos de producto identificados
+                A Los nuevos requisitos normativos obligatorios.
+                V. El número de probadores certificados en la organización.</h6>
+            <form id="question5form">
+                <div>
+                    <input type="radio" name="question5" id="question5option1" value="a">
+                    <label for="question5option1">a) I, II tienen una influencia significativa; III, IV, V no la
+                        tienen.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question5" id="question5option2" value="b">
+                    <label for="question5option2">b) I, III, IV tienen una influencia significativa; II, V no la
+                        tienen.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question5" id="question5option3" value="c">
+                    <label for="question5option3">c) I, IV, V tienen una influencia significativa; I, III no la
+                        tienen.</label>
+                </div>
+                <br>
+                <button type="button" id="question5SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(5)">See
+                    Answer</button>
+                <button type="button" id="question5CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(5, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer5"></p>
+            </form>
+            <br><br>
+
+            <!-- QUESTION 6 ---------------------------------------------------------------------------------------->
+            <h4>PREGUNTA 6</h4>
+            <h6>¿Cuál de las siguientes opciones es una ventaja de la retroalimentación temprana y frecuente?</h6>
+            <form id="question6form">
+                <div>
+                    <input type="radio" name="question6" id="question6option1" value="a">
+                    <label for="question6option1">a) Mejora el proceso de prueba para futuros proyectos.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question6" id="question6option2" value="b">
+                    <label for="question6option2">b) Obliga a los clientes a priorizar sus requisitos en función de los
+                        riesgos acordados.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question6" id="question6option3" value="c">
+                    <label for="question6option3">c) Ayuda a evitar malentendidos sobre los requisitos.</label>
+                </div>
+                <br>
+                <button type="button" id="question6SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(6)">See
+                    Answer</button>
+                <button type="button" id="question6CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(6, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer6"></p>
+            </form>
+            <br><br>
+
+            <!-- QUESTION 7 ---------------------------------------------------------------------------------------->
+            <h4>PREGUNTA 7</h4>
+            <h6>¿Cuáles de las siguientes competencias (I-V) son las MÁS importantes en un probador?Tener conocimiento
+                del dominio.
+                1. Crear una visión del producto.
+                HL. Ser un buen jugador de equipo.
+                1v. Planificar y organizar el trabajo del equipo.
+                V. Pensamiento crítico.
+            </h6>
+            <form id="question7form">
+                <div>
+                    <input type="radio" name="question7" id="question7option1" value="a">
+                    <label for="question7option1">a) II y IV son importantes; I, III y V no lo son.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question7" id="question7option2" value="b">
+                    <label for="question7option2">b) I, III y V son importantes; II y IV no lo son.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question7" id="question7option3" value="c">
+                    <label for="question7option3">c) I, II y V son importantes; III y IV no lo son.</label>
+                </div>
+                <br>
+                <button type="button" id="question7SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(7)">See
+                    Answer</button>
+                <button type="button" id="question7CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(7, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer7"></p>
+            </form>
+            <br><br>
+
+            <!-- QUESTION 8 ---------------------------------------------------------------------------------------->
+            <h4>PREGUNTA 8</h4>
+            <h6>¿Cómo queda reflejado el enfoque de equipo completo en las interacciones entre probadores y
+                representantes de negocio?
+            </h6>
+            <form id="question8form">
+                <div>
+                    <input type="radio" name="question8" id="question8option1" value="a">
+                    <label for="question8option1">a) Losrepresentantes de negocio deciden los enfoques de automatización
+                        de la prueba.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question8" id="question8option2" value="b">
+                    <label for="question8option2">b) Los probadores ayudan a los representantes de negocio a definir la
+                        estrategia de prueba.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question8" id="question8option3" value="c">
+                    <label for="question8option3">c) Los probadores ayudan a los representantes de negocio a crear
+                        pruebas de aceptación
+                        adecuadas.</label>
+                </div>
+                <br>
+                <button type="button" id="question8SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(8)">See
+                    Answer</button>
+                <button type="button" id="question8CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(8, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer8"></p>
+            </form>
+            <br><br>
+            <!-- QUESTION 9 ---------------------------------------------------------------------------------------->
+            <h4>PREGUNTA 9</h4>
+            <h6>Tenga en cuenta la siguiente regla: "para cada actividad del ciclo de vida de desarrollo de software
+                (CVDS) existe una actividad de prueba correspondiente". ¿En qué modelos de CVDS se cumple esta
+                regla?
+            </h6>
+            <form id="question9form">
+                <div>
+                    <input type="radio" name="question9" id="question9option1" value="a">
+                    <label for="question9option1">a) Sólo en modelos CVDS secuenciales.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question9" id="question9option2" value="b">
+                    <label for="question9option2">b) Sólo en modelos CVDS iterativos.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question9" id="question9option3" value="c">
+                    <label for="question9option3">c) En modelos CVDS secuenciales, incrementales e iterativos.</label>
+                </div>
+                <br>
+                <button type="button" id="question9SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(9)">See
+                    Answer</button>
+                <button type="button" id="question9CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(9, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer9"></p>
+            </form>
+            <br><br>
+            <!-- QUESTION 10 ---------------------------------------------------------------------------------------->
+            <h4>PREGUNTA 10</h4>
+            <h6>¿Cuál de los siguientes enunciados describe MEJOR el enfoque de desarrollo guiado por prueba de
+                aceptación (DGPA)?
+            </h6>
+            <form id="question10form">
+                <div>
+                    <input type="radio" name="question10" id="question10option1" value="a">
+                    <label for="question10option1">a) En DGPA, los criterios de aceptación suelen crearse basandose en
+                        el formato
+                        dado/cuando/entonces (“given/when/then”).</label>
+                </div>
+                <div>
+                    <input type="radio" name="question10" id="question10option2" value="b">
+                    <label for="question10option2">b) En DGPA, los casos de prueba se crean principalmente en la prueba
+                        de componente y están
+                        orientados al código.</label>
+                </div>
+                <div>
+                    <input type="radio" name="question10" id="question10option3" value="c">
+                    <label for="question10option3">c) En DGPA, se crean pruebas basadas en criterios de aceptación para
+                        impulsar el desarrollo del
+                        software correspondiente.</label>
+                </div>
+                <br>
+                <button type="button" id="question10SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(10)">See
+                    Answer</button>
+                <button type="button" id="question10CorrectAnswerButton" class="btn btn-primary"
+                    onclick="correctAnswer(10, 1)">Correct Answer</button>
+                <button type="reset" id="clear2Button" class="btn btn-close border" title="Clean answers"></button>
+                <p id="responseAnswer10"></p>
+            </form>
+            <br>
+            <hr>
+            <div id="finalScoreAndRanking">
+                <button type="button" id="finalScoreButton" class="btn btn-success"
+                    onclick="finalScore('responseFinalScore')">Final Score</button>
+                <button type="button" id="rankingButton" class="btn btn-warning" onclick="displayRanking()">Ranking</button>
+                <button type="button" id="resetTest" class="btn btn-danger" onclick="resetTest()">Reset Test</button>
+                <p id="responseFinalScore"></p>
+            </div>
+            <hr>
+        </div>
         <div id="ranking">
             <h2>Ranking</h2>
-            <p>Student Ranking</p>
+            <table class = "table table-striped">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="rankingBody">
+                    <!-- Rows for students will be injected here -->
+                </tbody>
+            </table>
+        <br>
         </div>
 
-    </div>
-
-
-    <footer class="mt-5 p-4 bg-light text-center">
-        <p>Footer</p>
-        <script src="script.js"></script>
-    </footer>
+        <footer class="mt-5 p-4 bg-light text-center">
+            <p>Footer</p>
+            <script src="script.js"></script>
+        </footer>
 
 </body>
 
