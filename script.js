@@ -1,29 +1,84 @@
 let correctAnswersList = ["c", "a", "a", "b", "b", "c", "b", "c", "c", "c"];
-let students = [];
+let students = JSON.parse(localStorage.getItem("students")) || [];
+let currentStudent = localStorage.getItem("currentStudent");
 
-let currentStudent = null;
+//Function to save students and currentStudent to localStorage
+function saveToLocalStorage() {
+  localStorage.setItem("students", JSON.stringify(students));
+  localStorage.setItem("currentStudent", currentStudent);
+}
 
-// Function for print some message in a container (div, p)
+// Print some message in a container (div, p)
 function printMessage(message, infoTextId) {
   let infoText = document.getElementById(infoTextId);
-  infoText.textContent = message;
+  if (infoText) {
+    infoText.innerHTML = message;
+  }
+}
+
+// Go to Ranking.html
+function goToPage(pageId) {
+  window.location.href = pageId;
 }
 
 // Displays a welcome message with the user's name
-function studentRegister(nameId, infoTextId) {
+function registerStudent(nameId, infoTextId) {
   let nameUser = document.getElementById(nameId).value;
   if (nameUser !== "") {
     let newStudent = {
       name: nameUser,
-      score: 0
+      score: 0,
     };
     students.push(newStudent);
     currentStudent = students.length - 1;
+    // Save to localStorage
+    saveToLocalStorage();
 
-    let message = "Hi " + nameUser + ", welcome to the ISTQB online test, try your best!";
+    let message =
+      "Student number: " +
+      currentStudent +
+      " Hi " +
+      nameUser +
+      ", welcome to the ISTQB online test, try your best!";
 
     printMessage(message, infoTextId);
-    resetTest();
+    setTimeout(() => {
+      goToPage("test.html"); // Redirect after 3 seconds
+    }, 3000); // 3000 miliseconds = 3 seconds
+  }
+}
+
+// Reset test (10 questions)
+function resetTest() {
+  let question = "";
+  let form = "";
+  let infoText = document.getElementById("responseFinalScore");
+
+  for (let i = 1; i <= 10; i++) {
+    question = "question" + i + "form";
+    form = document.getElementById(question);
+    if (form) {
+      form.reset();
+    }
+  }
+  infoText.textContent = "";
+
+  if (currentStudent !== null) {
+    let studentName = students[currentStudent]?.name || "Student";
+    let message =
+      "<i style='font-size: smaller'>Hi <b>" +
+      students[currentStudent].name +
+      "</b>, you can start your test now</i>";
+    printMessage(message, "studentRegistered");
+  }
+}
+
+// Update score of the current student
+function updateStudent(newScore) {
+  if (currentStudent !== null && students[currentStudent]) {
+    students[currentStudent].score = newScore;
+    //Save to localStorage
+    saveToLocalStorage();
   }
 }
 
@@ -35,10 +90,12 @@ function seeAnswer(questionNumber) {
   printMessage(message, "responseAnswer" + questionNumber);
 }
 
-// Checks if the answer was correct or not and returns its puntuation. 
+// Checks if the answer was correct or not and returns its puntuation.
 // Also can display or not a message with the correction and score
 function correctAnswer(questionNumber, displayMessage) {
-  let selectedAnswerElement = document.querySelector(`input[name="question${questionNumber}"]:checked`);
+  let selectedAnswerElement = document.querySelector(
+    `input[name="question${questionNumber}"]:checked`
+  );
   let correctAnswer = correctAnswersList[questionNumber - 1];
   let scoreAnswer = 0;
   let message = "";
@@ -53,7 +110,8 @@ function correctAnswer(questionNumber, displayMessage) {
       scoreAnswer = -1;
       message = "The answer is not correct. You have -1 points.";
     }
-  } else { // No answer selected
+  } else {
+    // No answer selected
     scoreAnswer = 0;
     message = "No answer selected. You have 0 points.";
   }
@@ -81,28 +139,6 @@ function finalScore(responseAnswer) {
   updateStudent(totalScore);
   message += "\nThe final score obtained is " + totalScore + " points";
   printMessage(message, responseAnswer);
-
-}
-
-// Update score of the current student
-function updateStudent(newScore) {
-  if (currentStudent !== null) {
-    students[currentStudent].score = newScore;
-  }
-}
-
-// Reset test (10 questions)
-function resetTest() {
-  let question = "";
-  let form = "";
-  let infoText = document.getElementById("responseFinalScore");
-
-  for (let i = 1; i <= 10; i++) {
-    question = "question" + i + "form";
-    form = document.getElementById(question);
-    form.reset();
-  }
-  infoText.textContent = "";
 }
 
 // Sort students by score in descending order
@@ -110,25 +146,35 @@ function sortStudentsByScore(students) {
   return students.sort((a, b) => b.score - a.score);
 }
 
-
-// Displays a list of all students taking the test along with their score 
+// Displays a list of all students taking the test along with their score
 // in order from hightest to lowest score
 function displayRanking() {
-  let rankingBody = document.getElementById('rankingBody');
-  let sortedStudents = sortStudentsByScore(students);
+  let rankingBody = document.getElementById("rankingBody");
 
-  // Clear exinging rows
-  rankingBody.innerHTML = "";
+  if (rankingBody) {
+    if (students.length) {
+      let sortedStudents = sortStudentsByScore(students);
+      
+      // Clear exinging rows
+      rankingBody.innerHTML = "";
 
-  // Inject new rows with the sorted students
-  sortedStudents.forEach((student, index) => {
-    let row = document.createElement("tr");
-    row.innerHTML = `
+      // Inject new rows with the sorted students
+      sortedStudents.forEach((student, index) => {
+        let row = document.createElement("tr");
+        row.innerHTML = `
       <td>${index + 1}</td>
       <td>${student.name}</td>
       <td>${student.score}</td>
     `;
-    rankingBody.appendChild(row);
-  });
-
+        rankingBody.appendChild(row);
+      });
+    } else {
+        rankingBody.innerHTML = "";
+        let noStudents = document.createElement("p");
+        noStudents.style.textAlign = "center";
+        noStudents.style.marginTop = "20px";
+        noStudents.innerHTML = "<i>No student has done the test</i>";
+        rankingBody.appendChild(noStudents);
+    }
+  }
 }

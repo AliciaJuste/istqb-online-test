@@ -29,30 +29,34 @@
     </nav>
 
     <div class="container mt-5">
-        <!-- WELCOME SECTION ------------------------------------------------------------>
-        <div id="welcome" class="section">
-            <form id="welcomeForm" class="was-validated">
-                <h2>Welcome</h2>
-                <p>Welcome to ISTQB Online Test</p>
-                <input type="text" id="studentName" placeholder="Nombre usuario" required maxlength="10"
-                    class="form-control" style="max-width: 170px;">
-                <p class="valid-feedback">El nombre de usuario es correcto</p>
-                <p class="invalid-feedback">El nombre de usuario no puede estar vacio y debe tener como máximo 10
-                    caracteres
-                </p>
-                <br>
-                <button type="button" id="registerButton" class="btn btn-primary"
-                    onclick="registerStudent('studentName', 'welcomeMessage')">Start Test</button>
-                <p id="welcomeMessage"></p>
-            </form>
+        <!-- RANKING SECTION --------------------------------------------------------------->
+        <div id="ranking" class="section">
+            <h2>Ranking</h2>
+            <table class = "table table-striped">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="rankingBody">
+                    <!-- Rows for students will be injected here -->
+                </tbody>
+            </table>
+        <br>
         </div>
-        <br><br>
 
         <footer class="mt-5 p-4 bg-light text-center">
             <p>Footer</p>
         </footer>
 
         <script src="script.js"></script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            displayRanking();
+          });
+        </script>
 
 </body>
 
