@@ -34,12 +34,7 @@ function registerStudent(nameId, infoTextId) {
     // Save to localStorage
     saveToLocalStorage();
 
-    let message =
-      "Student number: " +
-      currentStudent +
-      " Hi " +
-      nameUser +
-      ", welcome to the ISTQB online test, try your best!";
+    let message = " Hi " + nameUser + ", welcome to the ISTQB online test, try your best!";
 
     printMessage(message, infoTextId);
     setTimeout(() => {
@@ -65,10 +60,9 @@ function resetTest() {
 
   if (currentStudent !== null) {
     let studentName = students[currentStudent]?.name || "Student";
-    let message =
-      "<i style='font-size: smaller'>Hi <b>" +
-      students[currentStudent].name +
-      "</b>, you can start your test now</i>";
+    let message = "<i style='font-size: smaller'>Hi <b>" + 
+                  students[currentStudent].name +
+                  "</b>, you can start your test now</i>";
     printMessage(message, "studentRegistered");
   }
 }
@@ -93,9 +87,7 @@ function seeAnswer(questionNumber) {
 // Checks if the answer was correct or not and returns its puntuation.
 // Also can display or not a message with the correction and score
 function correctAnswer(questionNumber, displayMessage) {
-  let selectedAnswerElement = document.querySelector(
-    `input[name="question${questionNumber}"]:checked`
-  );
+  let selectedAnswerElement = document.querySelector(`input[name="question${questionNumber}"]:checked`);
   let correctAnswer = correctAnswersList[questionNumber - 1];
   let scoreAnswer = 0;
   let message = "";
@@ -161,11 +153,9 @@ function displayRanking() {
       // Inject new rows with the sorted students
       sortedStudents.forEach((student, index) => {
         let row = document.createElement("tr");
-        row.innerHTML = `
-      <td>${index + 1}</td>
-      <td>${student.name}</td>
-      <td>${student.score}</td>
-    `;
+        row.innerHTML = `<td>${index + 1}</td>
+                         <td>${student.name}</td>
+                         <td>${student.score}</td>`;
         rankingBody.appendChild(row);
       });
     } else {
