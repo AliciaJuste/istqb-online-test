@@ -34,7 +34,7 @@ function registerStudent(nameId, infoTextId) {
     // Save to localStorage
     saveToLocalStorage();
 
-    let message = " Hi " + nameUser + ", welcome to the ISTQB online test, try your best!";
+    let message = "Hi " + nameUser + ", welcome to the ISTQB online test, try your best!";
 
     printMessage(message, infoTextId);
     setTimeout(() => {
