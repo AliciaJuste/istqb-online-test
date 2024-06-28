@@ -27,9 +27,11 @@ function registerStudent(nameId, infoTextId) {
   let errorMessageElement = document.querySelector('[data-cy="welcome-message-error"]');
   let successMessageElement = document.querySelector('[data-cy="welcome-message-ok"]');
   let welcomeMessageElement = document.getElementById(infoTextId);
+  let form = document. getElementById('welcomeForm');
 
-  if (nameUser === "") {
-    // Mostrar mensaje de error
+  // Manually trigger validation
+  if (form.checkValidity() === false) {
+    form.classList.add('was-validated');
     errorMessageElement.style.display = 'block';
     successMessageElement.style.display = 'none';
     welcomeMessageElement.textContent = '';
