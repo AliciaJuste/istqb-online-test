@@ -24,7 +24,19 @@ function goToPage(pageId) {
 // Displays a welcome message with the user's name
 function registerStudent(nameId, infoTextId) {
   let nameUser = document.getElementById(nameId).value;
-  if (nameUser !== "") {
+  let errorMessageElement = document.querySelector('[data-cy="welcome-message-error"]');
+  let successMessageElement = document.querySelector('[data-cy="welcome-message-ok"]');
+  let welcomeMessageElement = document.getElementById(infoTextId);
+
+  if (nameUser === "") {
+    // Mostrar mensaje de error
+    errorMessageElement.style.display = 'block';
+    successMessageElement.style.display = 'none';
+    welcomeMessageElement.textContent = '';
+  } else {
+    // Ocultar mensaje de error y mostrar el mensaje de bienvenida
+    errorMessageElement.style.display = 'none';
+    successMessageElement.style.display = 'block';
     let newStudent = {
       name: nameUser,
       score: 0,

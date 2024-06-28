@@ -6,6 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        .invalid-feedback {
+            display:none;
+            color: red;
+        }
+    </script>
 </head>
 
 <body>
@@ -36,10 +42,8 @@
                 <p>Welcome to ISTQB Online Test</p>
                 <input type="text" id="studentName" data-cy="student-name" placeholder="Nombre usuario" required maxlength="10"
                     class="form-control" style="max-width: 170px;">
-                <p class="valid-feedback">El nombre de usuario es correcto</p>
-                <p class="invalid-feedback">El nombre de usuario no puede estar vacio y debe tener como máximo 10
-                    caracteres
-                </p>
+                <p class="valid-feedback" data-cy="welcome-message-ok">The user name is correct</p>
+                <p class="invalid-feedback" data-cy="welcome-message-error">The user name cannot be empty and must be a maximum of 10 characters long</p>
                 <br>
                 <button type="button" id="registerButton" data-cy="register-button" class="btn btn-primary"
                     onclick="registerStudent('studentName', 'welcomeMessage')">Start Test</button>
