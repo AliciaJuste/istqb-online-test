@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -40,7 +40,7 @@
             <!-- QUESTION 1 ---------------------------------------------------------------------------------------->
             <h4>PREGUNTA 1</h4>
             <h6>¿Cuál de los siguientes enunciados describe un objetivo de prueba válido?</h6>
-            <form id="question1form">
+            <form id="question1form" data-cy="question-1-form">
                 <div>
                     <input type="radio" name="question1" id="question1option1" value="a">
                     <label for="question1option1">a) Demostrar que no hay defectos no corregidos en el sistema sujeto a
@@ -57,12 +57,12 @@
                         en el nivel de calidad.</label>
                 </div>
                 <br>
-                <button type="button" id="question1SeeAnswerButton" class="btn btn-info" onclick="seeAnswer(1)">See
+                <button type="button" id="question1SeeAnswerButton" data-cy="question-1-See-Answer-Button" class="btn btn-info" onclick="seeAnswer(1)">See
                     Answer</button>
-                <button type="button" id="question1CorrectAnswerButton" class="btn btn-primary"
+                <button type="button" id="question1CorrectAnswerButton" data-cy="question-1-Correct-Answer-Button" class="btn btn-primary"
                     onclick="correctAnswer(1, 1)">Correct Answer</button>
                 <button type="reset" id="clear1Button" class="btn btn-close border" title="Clean answers"></button>
-                <p id="responseAnswer1"></p>
+                <p id="responseAnswer1" data-cy="response-Answer-1"></p>
             </form>
             <br><br>
             <!-- QUESTION 2 ---------------------------------------------------------------------------------------->
