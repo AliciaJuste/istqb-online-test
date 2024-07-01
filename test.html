@@ -68,7 +68,7 @@
             <!-- QUESTION 2 ---------------------------------------------------------------------------------------->
             <h4>PREGUNTA 2</h4>
             <h6>¿Cuál de las siguientes opciones es un ejemplo de actividades de prueba que contribuyen al éxito?</h6>
-            <form id="question2form">
+            <form id="question2form" data-cy="question-2-form">
                 <div>
                     <input type="radio" name="question2" id="question2option1" value="a">
                     <label for="question2option1">a) La participación de probadores durante varias actividades del ciclo
@@ -101,7 +101,7 @@
                 incremental. Ha notificado que no se han realizado cambios en los casos de prueba de regresión
                 existentes durante varias iteraciones y que no se han identificado nuevos defectos de regresión. Su jefe
                 está contento, pero usted no. ¿Qué principio de prueba explica su escepticismo?</h6>
-            <form id="question3form">
+            <form id="question3form" data-cy="question-3-form">
                 <div>
                     <input type="radio" name="question3" id="question3option1" value="a">
                     <label for="question3option1">a) Laspruebas se desgastan.</label>
@@ -128,7 +128,7 @@
             <h6>Usted trabaja en un equipo que desarrolla una aplicación móvil para hacer pedidos de comida. En la
                 iteración actual el equipo decidió implementar la funcionalidad de pago.
                 ¿Cuál de las siguientes actividades forma parte del análisis de prueba?</h6>
-            <form id="question4form">
+            <form id="question4form" data-cy="question-4-form">
                 <div>
                     <input type="radio" name="question4" id="question4option1" value="a">
                     <label for="question4option1">a) Estimar que probar la integración con el servicio de pago llevará 8
@@ -164,7 +164,7 @@
                 1. Los riesgos de producto identificados
                 A Los nuevos requisitos normativos obligatorios.
                 V. El número de probadores certificados en la organización.</h6>
-            <form id="question5form">
+            <form id="question5form" data-cy="question-5-form">
                 <div>
                     <input type="radio" name="question5" id="question5option1" value="a">
                     <label for="question5option1">a) I, II tienen una influencia significativa; III, IV, V no la
@@ -193,7 +193,7 @@
             <!-- QUESTION 6 ---------------------------------------------------------------------------------------->
             <h4>PREGUNTA 6</h4>
             <h6>¿Cuál de las siguientes opciones es una ventaja de la retroalimentación temprana y frecuente?</h6>
-            <form id="question6form">
+            <form id="question6form" data-cy="question-6-form">
                 <div>
                     <input type="radio" name="question6" id="question6option1" value="a">
                     <label for="question6option1">a) Mejora el proceso de prueba para futuros proyectos.</label>
@@ -226,7 +226,7 @@
                 1v. Planificar y organizar el trabajo del equipo.
                 V. Pensamiento crítico.
             </h6>
-            <form id="question7form">
+            <form id="question7form" data-cy="question-7-form">
                 <div>
                     <input type="radio" name="question7" id="question7option1" value="a">
                     <label for="question7option1">a) II y IV son importantes; I, III y V no lo son.</label>
@@ -254,7 +254,7 @@
             <h6>¿Cómo queda reflejado el enfoque de equipo completo en las interacciones entre probadores y
                 representantes de negocio?
             </h6>
-            <form id="question8form">
+            <form id="question8form" data-cy="question-8-form">
                 <div>
                     <input type="radio" name="question8" id="question8option1" value="a">
                     <label for="question8option1">a) Losrepresentantes de negocio deciden los enfoques de automatización
@@ -286,7 +286,7 @@
                 (CVDS) existe una actividad de prueba correspondiente". ¿En qué modelos de CVDS se cumple esta
                 regla?
             </h6>
-            <form id="question9form">
+            <form id="question9form" data-cy="question-9-form">
                 <div>
                     <input type="radio" name="question9" id="question9option1" value="a">
                     <label for="question9option1">a) Sólo en modelos CVDS secuenciales.</label>
@@ -313,7 +313,7 @@
             <h6>¿Cuál de los siguientes enunciados describe MEJOR el enfoque de desarrollo guiado por prueba de
                 aceptación (DGPA)?
             </h6>
-            <form id="question10form">
+            <form id="question10form" data-cy="question-10-form">
                 <div>
                     <input type="radio" name="question10" id="question10option1" value="a">
                     <label for="question10option1">a) En DGPA, los criterios de aceptación suelen crearse basandose en
@@ -344,7 +344,7 @@
             <hr>
             <!-- FINAL SCORE/RANKING BUTTONS -------------------------------------------->
             <div id="finalScoreAndRanking">
-                <button type="button" id="finalScoreButton" class="btn btn-success"
+                <button type="button" id="finalScoreButton" data-cy="final-Score-Button" class="btn btn-success"
                     onclick="finalScore('responseFinalScore')">Final Score</button>
                 <button type="button" id="rankingButton" class="btn btn-warning" onclick="goToPage('ranking.html')">Ranking</button>
                 <button type="button" id="resetTest" class="btn btn-danger" onclick="resetTest()">Reset Test</button>
