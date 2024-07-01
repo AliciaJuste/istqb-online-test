@@ -143,7 +143,7 @@ function finalScore(responseAnswer) {
   }
 
   updateStudent(totalScore);
-  message += "\nThe final score obtained is " + totalScore + " points";
+  message += "The final score obtained is " + totalScore + " points";
   printMessage(message, responseAnswer);
 }
 
