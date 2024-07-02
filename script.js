@@ -168,8 +168,8 @@ function displayRanking() {
       sortedStudents.forEach((student, index) => {
         let row = document.createElement("tr");
         row.innerHTML = `<td data-cy="ranking${index + 1}">${index + 1}</td>
-                         <td data-cy="student-name"${index + 1}>${student.name}</td>
-                         <td data-cy="student-score"${index + 1}>${student.score}</td>`;
+                         <td data-cy="student-name${index + 1}>${student.name}</td>
+                         <td data-cy="student-score${index + 1}>${student.score}</td>`;
         rankingBody.appendChild(row);
       });
     } else {
