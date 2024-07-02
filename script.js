@@ -158,10 +158,11 @@ function displayRanking() {
   let rankingBody = document.getElementById("rankingBody");
 
   if (rankingBody) {
-    if (students.length) {
-      let sortedStudents = sortStudentsByScore(students);
+    let storedStudents = JSON.parse(localStorage.getItem("students")) || [];
+    if (storedStudents.length) {
+      let sortedStudents = sortStudentsByScore(storedStudents);
       
-      // Clear exinging rows
+      // Clear existing rows
       rankingBody.innerHTML = "";
 
       // Inject new rows with the sorted students
